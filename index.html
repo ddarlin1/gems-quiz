@@ -16,7 +16,7 @@
       <div class="intro">
         <h1>Free Gem Quiz</h1>
         <h4>Which gem do you currently need?</h4>
-        <button class="button">Show me a random gem!</button>
+        <button class="button" id="button">Show me a random gem!</button>
       </div>
 
       <p>or...</p>
@@ -106,6 +106,16 @@
           <option value="clear">Clear/Colorless</option>
           <option value="multi">Multi-colored</option>
         </select>
+      </div>
+
+      <div class="gems-display hide">
+        <h3 class="name"></h3>
+        <figure>
+          <img class="img" />
+        </figure>
+        <p>Chakras: <span class="chakra"></span></p>
+        <p>Color: <span class="color"></span></p>
+        <p>Healing properties: <br><span class="properties"></span></p>
       </div>
 
     </div>

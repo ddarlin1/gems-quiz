@@ -42,3 +42,19 @@ body {
     box-shadow: rgba(0,0,0,0.1) 0px 4px 6px -1px,
     rgba(0,0,0,0.6) 0px 2px 4px -1px;
 }
+
+.gems-display {
+    background-color: cornflowerblue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 2em 0;
+    padding: 1em 1em;
+    border-radius: 5px;
+    box-shadow: rgba(0,0,0,0.1) 0px 4px 6px -1px,
+    rgba(0,0,0,0.6) 0px 2px 4px -1px;
+}
