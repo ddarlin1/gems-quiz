@@ -1,7 +1,7 @@
 const btn = document.getElementById("button");
-const healingSelect = document.getElementById("healing");
+const healingSelector = document.getElementById("healing");
 const chakraSelector = document.getElementById("chakras");
-const colorSelect = document.getElementById("colors");
+const colorSelector = document.getElementById("colors");
 
 //display variables
 const displayGems = document.querySelector(".gems-display");
@@ -30,7 +30,7 @@ const gemsArray = [
         name: "Amazonite",
         chakra:"Heart, Throat",
         color:"Green, blue-green",
-        properties:"optimism, hope, playfulness, calm, balance, being true to yourself, overcoming fears, easily expressing thoughts and feelings"
+        properties:"optimism, hope, playfulness, calming, balance, being true to yourself, overcoming fears, easily expressing thoughts and feelings"
     },
     {
         name: "Amethyst",
@@ -54,7 +54,7 @@ const gemsArray = [
         name: "Aquamarine",
         chakra:"Throat",
         color:"Aqua (light green - blue)",
-        properties:"protection at sea, eases travel, soothes an overactive mind, improves communication, loving-kindness, inner-peace, inspiration, growth, relaxation, calm, clear thoughts"
+        properties:"protection at sea, eases travel, soothes an overactive mind, improves communication, loving-kindness, inner-peace, inspiration, growth, relaxation, calming, clear thoughts"
     },
     {
         name: "Aventurine",
@@ -80,16 +80,50 @@ const displayRandomGem = function (randomGem) {
     displayGems.classList.remove("hide");
 };
 
+healingSelector.addEventListener("change", healingSelect);
+
+function healingSelect() {
+    for (let i = 0; i < gemsArray.length; i++) {
+        if (gemsArray[i].properties.includes(healingSelector.value)) {
+            let clone = displayGems.cloneNode(true);
+            displayGems.after(clone);
+            displayGems.classList.remove("hide");
+            gemName.innerText = gemsArray[i].name;
+            gemChakra.innerText = gemsArray[i].chakra;
+            gemColor.innerText = gemsArray[i].color;
+            gemProperties.innerText = gemsArray[i].properties;
+        }     
+    }
+};
+
 chakraSelector.addEventListener("change", chakraSelect);
 
 function chakraSelect() {
     for (let i = 0; i < gemsArray.length; i++) {
      if (gemsArray[i].chakra.includes(chakraSelector.value)) {
+         let clone = displayGems.cloneNode(true);
+         displayGems.after(clone);
          displayGems.classList.remove("hide");
          gemName.innerText = gemsArray[i].name;
          gemChakra.innerText = gemsArray[i].chakra;
          gemColor.innerText = gemsArray[i].color;
          gemProperties.innerText = gemsArray[i].properties;
      }     
+    }
+};
+
+colorSelector.addEventListener("change", colorSelect);
+
+function colorSelect() {
+    for (let i = 0; i < gemsArray.length; i++) {
+        if (gemsArray[i].color.includes(colorSelector.value)) {
+            let clone = displayGems.cloneNode(true);
+            displayGems.after(clone);
+            displayGems.classList.remove("hide");
+            gemName.innerText = gemsArray[i].name;
+            gemChakra.innerText = gemsArray[i].chakra;
+            gemColor.innerText = gemsArray[i].color;
+            gemProperties.innerText = gemsArray[i].properties;
+        }     
     }
 };
