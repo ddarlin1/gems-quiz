@@ -80,50 +80,20 @@ const displayRandomGem = function (randomGem) {
     displayGems.classList.remove("hide");
 };
 
-healingSelector.addEventListener("change", healingSelect);
+healingSelector.addEventListener("change", gemSelect);
+chakraSelector.addEventListener("change", gemSelect);
+colorSelector.addEventListener("change", gemSelect);
 
-function healingSelect() {
+function gemSelect() {
     for (let i = 0; i < gemsArray.length; i++) {
-        if (gemsArray[i].properties.includes(healingSelector.value)) {
+        if (gemsArray[i].properties.includes(healingSelector.value) && gemsArray[i].chakra.includes(chakraSelector.value) && gemsArray[i].color.includes(colorSelector.value)) {
             let clone = displayGems.cloneNode(true);
             displayGems.after(clone);
-            displayGems.classList.remove("hide");
             gemName.innerText = gemsArray[i].name;
             gemChakra.innerText = gemsArray[i].chakra;
             gemColor.innerText = gemsArray[i].color;
             gemProperties.innerText = gemsArray[i].properties;
-        }     
-    }
-};
-
-chakraSelector.addEventListener("change", chakraSelect);
-
-function chakraSelect() {
-    for (let i = 0; i < gemsArray.length; i++) {
-     if (gemsArray[i].chakra.includes(chakraSelector.value)) {
-         let clone = displayGems.cloneNode(true);
-         displayGems.after(clone);
-         displayGems.classList.remove("hide");
-         gemName.innerText = gemsArray[i].name;
-         gemChakra.innerText = gemsArray[i].chakra;
-         gemColor.innerText = gemsArray[i].color;
-         gemProperties.innerText = gemsArray[i].properties;
-     }     
-    }
-};
-
-colorSelector.addEventListener("change", colorSelect);
-
-function colorSelect() {
-    for (let i = 0; i < gemsArray.length; i++) {
-        if (gemsArray[i].color.includes(colorSelector.value)) {
-            let clone = displayGems.cloneNode(true);
-            displayGems.after(clone);
             displayGems.classList.remove("hide");
-            gemName.innerText = gemsArray[i].name;
-            gemChakra.innerText = gemsArray[i].chakra;
-            gemColor.innerText = gemsArray[i].color;
-            gemProperties.innerText = gemsArray[i].properties;
         }     
     }
 };
