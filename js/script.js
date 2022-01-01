@@ -1,4 +1,4 @@
-const btn = document.getElementById("button");
+const btn = document.getElementById("random-btn");
 const healingSelector = document.getElementById("healing");
 const chakraSelector = document.getElementById("chakras");
 const colorSelector = document.getElementById("colors");
@@ -86,6 +86,7 @@ const displayRandomGem = function (randomGem) {
     gemProperties.innerText = randomGem.properties;
     displayGems.classList.remove("hide");
     resetGems.classList.remove("hide");
+    advanced.classList.add("hide");
 };
 
 
@@ -95,10 +96,14 @@ function reloadBtn() {
     location.reload();
 };
 
+healingSelector.addEventListener("change", advancedShow);
+
+function advancedShow() {
+    advanced.classList.remove("hide");
+    pickBtn.classList.remove("hide");
+}
 
 pickBtn.addEventListener("click", gemSelect);
-
-
 
 function gemSelect() {
     selectedHealing = healingSelector.value;
@@ -118,6 +123,6 @@ function gemSelect() {
             pickGems.classList.add("hide");
             pickBtn.classList.add("hide");
             advanced.classList.add("hide");
-        }     
+        }
     }
 };
