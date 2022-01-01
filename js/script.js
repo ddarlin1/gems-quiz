@@ -15,6 +15,7 @@ const gemProperties = document.querySelector(".properties");
 const resetGems = document.querySelector(".reset");
 const intro = document.querySelector(".intro");
 const advanced = document.querySelector(".advanced");
+const notMatch = document.querySelector(".no-match");
 
 
 btn.addEventListener("click", random);
@@ -123,6 +124,15 @@ function gemSelect() {
             pickGems.classList.add("hide");
             pickBtn.classList.add("hide");
             advanced.classList.add("hide");
+        } else {
+            notMatch.classList.remove("hide");
         }
     }
+};
+
+chakraSelector.addEventListener("change", matchQuery);
+colorSelector.addEventListener("change", matchQuery);
+
+function matchQuery() {
+    notMatch.classList.add("hide");
 };
