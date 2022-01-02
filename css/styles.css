@@ -16,9 +16,10 @@ body {
     justify-content: center;
     flex-direction: column;
     text-align: center;
-    font-family: Arial, sans-serif;
-    background: cornflowerblue;
-    color: cornsilk;
+    font-family: 'Montserrat', sans-serif;
+    background: #4271bd url("../img/bg1.jpeg") no-repeat center fixed;
+    background-size: cover;
+    color: #fff;
     font-size: 16px;
 }
 
@@ -26,8 +27,20 @@ body {
     display: none !important;
 }
 
+h1 {
+    width: 100%;
+    padding: 0.25em 0;
+    margin: 0;
+    font-family: 'Pushster', cursive;
+    font-size: 2.75em;
+    letter-spacing: 0.1em;
+    text-align: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
 .container {
-    background-color: cornsilk;
+    background-color:#fff;
     color: #222;
     display: flex;
     align-items: center;
@@ -35,7 +48,7 @@ body {
     flex-direction: column;
     flex-wrap: wrap;
     width: 80%;
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 2em;
     padding: 1em 2em;
     border-radius: 5px;
@@ -43,18 +56,87 @@ body {
     rgba(0,0,0,0.6) 0px 2px 4px -1px;
 }
 
+.advanced {
+    line-height: 1em;
+    padding: .5em .5em;
+}
+
+.heal-select, .chakra-select, .color-select {
+    line-height: 1.7em;
+}
+
 .gems-display {
-    background-color: cornflowerblue;
+    background-color: #4271bd;
     color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
     flex-wrap: wrap;
-    max-width: 1200px;
-    margin: 2em 0;
-    padding: 1em 1em;
+    max-width: 1000px;
+    margin: 1.5em 0;
+    padding: 2em 2em;
     border-radius: 5px;
     box-shadow: rgba(0,0,0,0.1) 0px 4px 6px -1px,
     rgba(0,0,0,0.6) 0px 2px 4px -1px;
 }
+
+.name {
+    font-size: 1.65em;
+    font-weight: 700;
+}
+
+#pick-btn {
+    font-size: 1.75em;
+    margin: .25em 0;
+    background: linear-gradient(-45deg, white, #d9e3f2, #a1b8de);
+    background-size: 400% 400%;
+    animation: gradient 2.25s ease-in-out infinite;
+}
+
+.button {
+    padding: .5em .5em;
+}
+
+.button:hover {
+    background-color: #b4c6e4;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: scale(1.15);
+}
+
+@keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+  
+    50% {
+      background-position: 100% 50%;
+    }
+  
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+@media (min-width: 700px) {
+    body {
+        font-size: 18px;
+    }
+
+    h1 {
+        font-size: 4em;
+    }
+
+    .gems-display {
+        width: 90%;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .gems-display {
+        width: 80%;
+    }
+}
+

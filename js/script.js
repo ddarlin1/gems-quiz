@@ -87,6 +87,7 @@ const displayRandomGem = function (randomGem) {
     gemProperties.innerText = randomGem.properties;
     displayGems.classList.remove("hide");
     resetGems.classList.remove("hide");
+    pickBtn.classList.add("hide");
     advanced.classList.add("hide");
 };
 
