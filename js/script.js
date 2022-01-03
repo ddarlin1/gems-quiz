@@ -9,6 +9,7 @@ const resetBtn = document.getElementById("reset-btn");
 const pickGems = document.querySelector(".pick-a-gem");
 const displayGems = document.querySelector(".gems-display");
 const gemName = document.querySelector(".name");
+const gemImg = document.getElementById("gem-image");
 const gemChakra = document.querySelector(".chakra");
 const gemColor = document.querySelector(".color");
 const gemProperties = document.querySelector(".properties");
@@ -23,48 +24,64 @@ btn.addEventListener("click", random);
 const gemsArray = [
     {
         name: "Abalone",
+        src: "img/abalone.jpg",
+        alt: "Abalone",
         chakra:"Crown, Third Eye, Heart",
         color:"Multi-colored",
         properties:"calming, soothing, healing, emotional balance, protection, dampens anger, a wave of peace & love"
     },
     {
         name: "Agate",
+        src: "img/agate.jpg",
+        alt: "Agate",
         chakra:"Heart, Throat",
         color:"Blue, multi-colored",
         properties:"calming, serenity, harmony, peacefulness, healing, reduce anxiety, stabilizes emotions, mental-health boost"
     },
     {
         name: "Amazonite",
+        src: "img/amazonite.jpg",
+        alt: "Amazonite",
         chakra:"Heart, Throat",
         color:"Green, blue-green",
         properties:"optimism, hope, playfulness, calming, balance, being true to yourself, overcoming fears, easily expressing thoughts and feelings"
     },
     {
         name: "Amethyst",
+        src: "img/amethyst.jpg",
+        alt: "Amethyst",
         chakra:"Crown",
         color:"Purple",
         properties:"peace, intuition, spirituality, relaxation, sleep-aid, pain relieving, healing"
     },
     {
         name: "Ammonite Fossil",
+        src: "img/ammonite.jpg",
+        alt: "Ammonite",
         chakra:"Root, Third Eye",
         color:"Brown",
         properties:"prosperity, stamina, transformation, personal growth, good health, protection, vitality, life force, wealth, happiness, evolution"
     },
     {
         name: "Apatite",
+        src: "img/apatite.jpg",
+        alt: "Apatite",
         chakra:"Throat, Third Eye",
         color:"Blue",
         properties:"intuition, wisdom, communication, personal power to acheive goals, stimulates the intellect, removes negativity, psychic awareness, spirituality"
     },
     {
         name: "Aquamarine",
+        src: "img/aquamarine.jpg",
+        alt: "Aquamarine",
         chakra:"Throat",
         color:"Aqua (light green - blue)",
         properties:"protection at sea, eases travel, soothes an overactive mind, improves communication, loving-kindness, inner-peace, inspiration, growth, relaxation, calming, clear thoughts"
     },
     {
         name: "Aventurine",
+        src: "img/aventurine.jpg",
+        alt: "Aventurine",
         chakra:"Heart",
         color:"Green",
         properties:"prosperity, confidence, purpose, luck, good fortune, abundance, opportunity, personal growth, soothes anxiety, optimism, intelletual development, learning"
@@ -82,6 +99,8 @@ function random() {
 const displayRandomGem = function (randomGem) {
     pickGems.classList.add("hide");
     gemName.innerText = randomGem.name;
+    gemImg.src = randomGem.src;
+    gemImg.alt = randomGem.alt;
     gemChakra.innerText = randomGem.chakra;
     gemColor.innerText = randomGem.color;
     gemProperties.innerText = randomGem.properties;
@@ -116,6 +135,8 @@ function gemSelect() {
             let clone = displayGems.cloneNode(true);
             displayGems.after(clone);
             gemName.innerText = gemsArray[i].name;
+            gemImg.src = gemsArray[i].src;
+            gemImg.alt = gemsArray[i].alt;
             gemChakra.innerText = gemsArray[i].chakra;
             gemColor.innerText = gemsArray[i].color;
             gemProperties.innerText = gemsArray[i].properties;
